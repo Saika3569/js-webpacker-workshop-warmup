@@ -1,14 +1,14 @@
 <h1>Products</h1>
 
-<table>
-  <thead>
+<table class="table table-striped table-hover ">
+  <thead class='thead-dark'>
     <tr>
-      <th>Name</th>
-      <th>Money</th>
-      <th>Currency</th>
-      <th>Tags</th>
-      <th>Start at</th>
-      <th>End at</th>
+      <th scope="col">Name</th>
+      <th scope="col">Money</th>
+      <th scope="col">Currency</th>
+      <th scope="col">Tags</th>
+      <th scope="col">Start at</th>
+      <th scope="col">Endat at</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,15 +16,15 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.name %></td>
-        <td><%= product.money %></td>
-        <td><%= product.currency %></td>
-        <td><%= display_tag_list(product.tags) %></td>
-        <td><%= product.start_at %></td>
-        <td><%= product.end_at %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="align-middle"><%= product.name %></td>
+        <td class="align-middle"><%= product.money %></td>
+        <td class="align-middle"><%= product.currency %></td>
+        <td class="align-middle"><%= display_tag_list(product.tags) %></td>
+        <td class="align-middle"><%= product.start_at %></td>
+        <td class="align-middle"><%= product.end_at %></td>
+        <td class="align-middle"><%= link_to 'Show', product , class: 'text-decoration-none text-primary' %></td>
+        <td class="align-middle"><%= link_to 'Edit', edit_product_path(product), class: 'text-decoration-none text-secondary' %></td>
+        <td class="align-middle"><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } , class: 'text-decoration-none'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,6 @@
 
 <br>
 
+
 <%= link_to 'New Product', new_product_path %>
+
